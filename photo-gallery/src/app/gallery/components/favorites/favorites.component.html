@@ -1,0 +1,9 @@
+<div class="favorite">
+  <div
+    class="favorite__item"
+    *ngFor="let image of favorite$ | async; let i = index"
+    (click)="viewImage(image.id)"
+  >
+    <img [src]="image.url" alt="" width="300" height="300" />
+  </div>
+</div>

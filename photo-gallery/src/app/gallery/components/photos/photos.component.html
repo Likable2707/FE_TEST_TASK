@@ -1,0 +1,17 @@
+<div class="photos__container">
+  <div
+    class="photos"
+    infiniteScroll
+    [infiniteScrollDistance]="1"
+    [infiniteScrollThrottle]="300"
+    [infiniteScrollUpDistance]="1"
+    [scrollWindow]="false"
+    (scrolled)="onScrollDown()"
+  >
+    <div class="photos__item" *ngFor="let image of images$ | async; let i=index;" (click)="addToFavorite(i)">
+      <img [src]="image.url" alt="" width="300" height="300" />
+      <span *ngIf="image.isFavorite" class="photos__favorites-icon">&#10084;</span>
+    </div>
+  </div>
+  <pg-spinner *ngIf="isLoading"></pg-spinner>
+</div>
