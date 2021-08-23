@@ -44,6 +44,10 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: node-app
+        
+    - name: check folder tree
+      run: |
+        tree .
 
     - name: 'Deploy to Azure Web App'
       id: deploy-to-webapp
@@ -52,4 +56,4 @@ jobs:
         app-name: 'katetestaAngular'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_51f83900e1c54691811beaedcb885621 }}
-        package: ./dist/photo-gallery
+        package: ./photo-gallery/dist/photo-gallery
