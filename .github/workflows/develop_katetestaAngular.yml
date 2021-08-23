@@ -52,4 +52,4 @@ jobs:
         app-name: 'katetestaAngular'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_51f83900e1c54691811beaedcb885621 }}
-        package: .
+        package: ./dist/photo-gallery
